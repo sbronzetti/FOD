@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FodModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="FodEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Airports" EntityType="FodModel.Airports" />
+    <EntitySet Name="Settings" EntityType="FodModel.Settings" />
+    <EntitySet Name="Voli" EntityType="FodModel.Voli" />
+    <EntitySet Name="RicercheVolis" EntityType="FodModel.RicercheVoli" />
+    <EntitySet Name="AirportsCosts" EntityType="FodModel.AirportsCost" />
+    <EntitySet Name="Cities" EntityType="FodModel.City" />
+  </EntityContainer>
+  <EntityType Name="Airports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="150" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Value" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Voli">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="From" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="To" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Dal" Type="DateTime" />
+    <Property Name="Al" Type="DateTime" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="OldPrice" Type="Double" />
+    <Property Name="IsPriceChanged" Type="Boolean" />
+    <Property Name="IsBestLocalOffer" Type="Int32" />
+    <Property Name="IsBestGlobalOffer" Type="Int32" />
+    <Property Name="DataRicerca" Type="DateTime" />
+    <Property Name="FromCode" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Type="Boolean" Name="Weekend" />
+    <Property Type="Decimal" Name="Days" Precision="10" Scale="0" />
+    <Property Type="String" Name="Vettore" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Star" />
+  </EntityType>
+  <EntityType Name="RicercheVoli">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Url" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Boolean" Name="Processato" />
+    <Property Type="DateTime" Name="DataRicerca" />
+    <Property Type="String" Name="FromCode" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Vettore" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AirportsCost">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Distance" />
+    <Property Type="Double" Name="AutorouteCost" />
+    <Property Type="Double" Name="ParkDayCost" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="IdCity" />
+    </Key>
+    <Property Type="Int32" Name="IdCity" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Visible" />
+    <Property Type="Int32" Name="Type" />
+  </EntityType>
+</Schema>

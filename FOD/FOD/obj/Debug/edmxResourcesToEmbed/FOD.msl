@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FodModelStoreContainer" CdmEntityContainer="FodEntities">
+    <EntitySetMapping Name="Airports">
+      <EntityTypeMapping TypeName="FodModel.Airports">
+        <MappingFragment StoreEntitySet="Airports">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="FodModel.Settings">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voli">
+      <EntityTypeMapping TypeName="FodModel.Voli">
+        <MappingFragment StoreEntitySet="Voli">
+          <ScalarProperty Name="Star" ColumnName="Star" />
+          <ScalarProperty Name="Vettore" ColumnName="Vettore" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Weekend" ColumnName="Weekend" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="Dal" ColumnName="Dal" />
+          <ScalarProperty Name="Al" ColumnName="Al" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+          <ScalarProperty Name="IsPriceChanged" ColumnName="IsPriceChanged" />
+          <ScalarProperty Name="IsBestLocalOffer" ColumnName="IsBestLocalOffer" />
+          <ScalarProperty Name="IsBestGlobalOffer" ColumnName="IsBestGlobalOffer" />
+          <ScalarProperty Name="DataRicerca" ColumnName="DataRicerca" />
+          <ScalarProperty Name="FromCode" ColumnName="FromCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RicercheVolis">
+      <EntityTypeMapping TypeName="FodModel.RicercheVoli">
+        <MappingFragment StoreEntitySet="RicercheVoli">
+          <ScalarProperty Name="Vettore" ColumnName="Vettore" />
+          <ScalarProperty Name="FromCode" ColumnName="FromCode" />
+          <ScalarProperty Name="DataRicerca" ColumnName="DataRicerca" />
+          <ScalarProperty Name="Processato" ColumnName="Processato" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AirportsCosts">
+      <EntityTypeMapping TypeName="FodModel.AirportsCost">
+        <MappingFragment StoreEntitySet="AirportsCosts">
+          <ScalarProperty Name="ParkDayCost" ColumnName="ParkDayCost" />
+          <ScalarProperty Name="AutorouteCost" ColumnName="AutorouteCost" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="FodModel.City">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

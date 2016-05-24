@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FodModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FodModelStoreContainer">
+          <EntitySet Name="Airports" EntityType="FodModel.Store.Airports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AirportsCosts" EntityType="FodModel.Store.AirportsCosts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cities" EntityType="FodModel.Store.Cities" store:Type="Tables" store:Schema="dbo" store:Name="Cities">
+            <DefiningQuery>SELECT 
+      [Cities].[IdCity] AS [IdCity], 
+      [Cities].[Name] AS [Name], 
+      [Cities].[Visible] AS [Visible], 
+      [Cities].[Type] AS [Type]
+      FROM [dbo].[Cities] AS [Cities]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RicercheVoli" EntityType="FodModel.Store.RicercheVoli" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Settings" EntityType="FodModel.Store.Settings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Voli" EntityType="FodModel.Store.Voli" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Airports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Country" Type="nchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="AirportsCosts">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Distance" Type="float" />
+          <Property Name="AutorouteCost" Type="float" />
+          <Property Name="ParkDayCost" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'rugia.dbo.Cities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="IdCity" />
+          </Key>
+          <Property Name="IdCity" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Visible" Type="bit" />
+          <Property Name="Type" Type="int" />
+        </EntityType>
+        <EntityType Name="RicercheVoli">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Url" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Processato" Type="bit" />
+          <Property Name="DataRicerca" Type="datetime" />
+          <Property Name="FromCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="Vettore" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Voli">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="From" Type="nvarchar" MaxLength="100" />
+          <Property Name="To" Type="nvarchar" MaxLength="100" />
+          <Property Name="Dal" Type="datetime" />
+          <Property Name="Al" Type="datetime" />
+          <Property Name="Price" Type="float" />
+          <Property Name="OldPrice" Type="float" />
+          <Property Name="IsPriceChanged" Type="bit" />
+          <Property Name="IsBestLocalOffer" Type="int" />
+          <Property Name="IsBestGlobalOffer" Type="int" />
+          <Property Name="DataRicerca" Type="datetime" />
+          <Property Name="FromCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="Weekend" Type="bit" />
+          <Property Name="Days" Type="numeric" Precision="10" />
+          <Property Name="Vettore" Type="nvarchar" MaxLength="50" />
+          <Property Name="Star" Type="bit" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FodModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FodEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Airports" EntityType="FodModel.Airports" />
+          <EntitySet Name="Settings" EntityType="FodModel.Settings" />
+          <EntitySet Name="Voli" EntityType="FodModel.Voli" />
+          <EntitySet Name="RicercheVolis" EntityType="FodModel.RicercheVoli" />
+          <EntitySet Name="AirportsCosts" EntityType="FodModel.AirportsCost" />
+          <EntitySet Name="Cities" EntityType="FodModel.City" />
+        </EntityContainer>
+        <EntityType Name="Airports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="150" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Value" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Voli">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="From" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="To" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Dal" Type="DateTime" />
+          <Property Name="Al" Type="DateTime" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="OldPrice" Type="Double" />
+          <Property Name="IsPriceChanged" Type="Boolean" />
+          <Property Name="IsBestLocalOffer" Type="Int32" />
+          <Property Name="IsBestGlobalOffer" Type="Int32" />
+          <Property Name="DataRicerca" Type="DateTime" />
+          <Property Name="FromCode" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Type="Boolean" Name="Weekend" />
+          <Property Type="Decimal" Name="Days" Precision="10" Scale="0" />
+          <Property Type="String" Name="Vettore" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Star" />
+        </EntityType>
+        <EntityType Name="RicercheVoli">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Url" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Boolean" Name="Processato" />
+          <Property Type="DateTime" Name="DataRicerca" />
+          <Property Type="String" Name="FromCode" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Vettore" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AirportsCost">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Distance" />
+          <Property Type="Double" Name="AutorouteCost" />
+          <Property Type="Double" Name="ParkDayCost" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="IdCity" />
+          </Key>
+          <Property Type="Int32" Name="IdCity" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Visible" />
+          <Property Type="Int32" Name="Type" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FodModelStoreContainer" CdmEntityContainer="FodEntities">
+          <EntitySetMapping Name="Airports">
+            <EntityTypeMapping TypeName="FodModel.Airports">
+              <MappingFragment StoreEntitySet="Airports">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settings">
+            <EntityTypeMapping TypeName="FodModel.Settings">
+              <MappingFragment StoreEntitySet="Settings">
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Voli">
+            <EntityTypeMapping TypeName="FodModel.Voli">
+              <MappingFragment StoreEntitySet="Voli">
+                <ScalarProperty Name="Star" ColumnName="Star" />
+                <ScalarProperty Name="Vettore" ColumnName="Vettore" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="Weekend" ColumnName="Weekend" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="Dal" ColumnName="Dal" />
+                <ScalarProperty Name="Al" ColumnName="Al" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="IsPriceChanged" ColumnName="IsPriceChanged" />
+                <ScalarProperty Name="IsBestLocalOffer" ColumnName="IsBestLocalOffer" />
+                <ScalarProperty Name="IsBestGlobalOffer" ColumnName="IsBestGlobalOffer" />
+                <ScalarProperty Name="DataRicerca" ColumnName="DataRicerca" />
+                <ScalarProperty Name="FromCode" ColumnName="FromCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RicercheVolis">
+            <EntityTypeMapping TypeName="FodModel.RicercheVoli">
+              <MappingFragment StoreEntitySet="RicercheVoli">
+                <ScalarProperty Name="Vettore" ColumnName="Vettore" />
+                <ScalarProperty Name="FromCode" ColumnName="FromCode" />
+                <ScalarProperty Name="DataRicerca" ColumnName="DataRicerca" />
+                <ScalarProperty Name="Processato" ColumnName="Processato" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AirportsCosts">
+            <EntityTypeMapping TypeName="FodModel.AirportsCost">
+              <MappingFragment StoreEntitySet="AirportsCosts">
+                <ScalarProperty Name="ParkDayCost" ColumnName="ParkDayCost" />
+                <ScalarProperty Name="AutorouteCost" ColumnName="AutorouteCost" />
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="FodModel.City">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="FOD">
+        <EntityTypeShape EntityType="FodModel.Airports" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FodModel.Settings" Width="1.5" PointX="2.75" PointY="0.75" Height="1.4033821614583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="FodModel.Voli" Width="1.5" PointX="0.75" PointY="3.75" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FodModel.RicercheVoli" Width="1.5" PointX="3.375" PointY="3.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="FodModel.AirportsCost" Width="1.5" PointX="5.375" PointY="0.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="FodModel.City" Width="1.5" PointX="5.375" PointY="3.75" Height="1.787985026041667" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

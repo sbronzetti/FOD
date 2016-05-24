@@ -1,0 +1,343 @@
+# Copyright (c) 1993-1999 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+127.0.0.1      	localhost
+
+173.194.35.57	www.google.com
+173.194.35.57	www.googleadservices.com
+173.0.82.83	api-3t.sandbox.paypal.com
+192.168.150.99	update.aruba.it
+173.194.35.20	toolbarqueries.google.com
+
+###CLOUD
+95.110.152.12	services.dc1.cloud.it
+95.110.152.12	api.dc1.computing.cloud.it
+95.110.152.12	services.dcs.cloud.it
+95.110.152.108	api.services.cloud.it
+95.110.152.11	admin.dc1.computing.cloud.it
+95.110.152.18	admin.services.cloud.it
+95.110.152.79	api.central.computing.cloud.it
+95.110.152.65	api.private.computing.cloud.it
+95.110.152.77	admin.partner.cloud.it
+95.110.152.12	services.dc1.cloud.it
+
+#####################
+#SQL2008R2
+192.168.150.220	ArubaCommSys.db.aruba
+192.168.150.220	ArubaConfig.db.aruba
+192.168.150.220	ArubaDelivery.db.aruba
+192.168.150.220	ArubaDNS.db.aruba
+192.168.150.220	ArubaManagement.db.aruba
+192.168.150.220	ArubaMessageBroker.db.aruba
+192.168.150.220	ArubaNotification.db.aruba
+192.168.150.220	ArubaRegistry.db.aruba
+192.168.150.220	ArubaWebApiLog.db.aruba
+192.168.150.220	aspstate.db.aruba
+192.168.150.220	aspState_pagamentiarubait.db.aruba
+192.168.150.220	aspState_supersitearubait.db.aruba
+192.168.150.220	CallCenter.db.aruba
+192.168.150.220	CambioCertificatoClient.db.aruba
+192.168.150.220	CAuthoLog.ad.aruba
+192.168.150.220	CAuthoLog.db.aruba
+192.168.150.220	CommEu.db.aruba
+192.168.150.220	configurationmanagement.db.aruba
+192.168.150.220	dnspanel.db.aruba
+192.168.150.220	DocService2.db.aruba
+192.168.150.220	EasyFix.db.aruba
+192.168.150.220	extranet.db.aruba
+192.168.150.220	Gestione_DNS.db.aruba
+192.168.150.220	GTldPreferences.db.aruba
+192.168.150.220	Intranet_Administration.db.aruba
+192.168.150.220	IntranetProcessi.db.aruba
+192.168.150.220	IRSLive.db.aruba
+192.168.150.220	NicSystem.db.aruba
+192.168.150.220	OpenSrs.db.aruba
+192.168.150.220	OpenSrsService.db.aruba
+192.168.150.220	ParkedDomains.db.aruba
+192.168.150.220	Photosi.db.aruba
+192.168.150.220	Procedure_Interne.db.aruba
+192.168.150.220	provisioning.db.aruba
+192.168.150.220	QueueService.db.aruba
+192.168.150.220	RegistraOpenSRS.db.aruba
+192.168.150.220	ServiceManagement.db.aruba
+192.168.150.220	SharedMailAdmin.db.aruba
+192.168.150.220	SharedMailImport.db.aruba
+192.168.150.220	SharedMailLog.db.aruba
+192.168.150.220	SiteBuilder.db.aruba
+192.168.150.220	supporto_technorail.db.aruba
+192.168.150.220	technorail.db.aruba
+192.168.150.220	Technorail_Lettura.db.aruba
+192.168.150.220	technorail_tab_log.db.aruba
+192.168.150.220	WhiteListFTP.db.aruba
+192.168.150.220	BuildServer.db.aruba
+
+#SQLDBARUBA5
+192.168.150.223	ApplicationInstallerDB.db.aruba
+192.168.150.223	Aruba_PEC.db.aruba
+192.168.150.223	ArubaLinking.db.aruba
+192.168.150.223	ArubaPec.ad.aruba
+192.168.150.223	ArubaPec.db.aruba
+192.168.150.223	ASPState_PhotoAdmin.db.aruba
+192.168.150.223	ASPState_wwwpecit.db.aruba
+192.168.150.223	Bannertechnorail.db.aruba
+192.168.150.223	Blog.db.aruba
+192.168.150.223	CallCenter.db.aruba
+192.168.150.223	ConfigParkDNN.db.aruba
+192.168.150.223	ConfigParkDNN_STATS.db.aruba
+192.168.150.223	DbNonFree.db.aruba
+192.168.150.223	DocService2.db.aruba
+192.168.150.223	enewsletterpro_ENT.db.aruba
+192.168.150.223	Faq.db.aruba
+192.168.150.223	FotoAlbum.db.aruba
+192.168.150.223	FotoAlbumold.db.aruba
+192.168.150.223	G6FTPBan.db.aruba
+192.168.150.223	Gestione_MSSQLServer.db.aruba
+192.168.150.223	GestioneDNN.db.aruba
+192.168.150.223	GestioneProcedure.db.aruba
+192.168.150.223	GestioneStatistiche.db.aruba
+192.168.150.223	ict_intranet.db.aruba
+192.168.150.223	Log_Radius_Adsl.db.aruba
+192.168.150.223	Operations.db.aruba
+192.168.150.223	OURSQL4
+192.168.150.223	OURSQL4.db.aruba
+192.168.150.223	PecClienti.db.aruba
+192.168.150.223	PhotoSi.ad.aruba
+192.168.150.223	provisioning_Backup.db.aruba
+192.168.150.223	QuadratureService.db.aruba
+192.168.150.223 quadraturestatistiche.db.aruba
+192.168.150.223	QuadratureWebs.db.aruba
+192.168.150.223	REDBLOGFA.db.aruba
+192.168.150.223	redirect.db.aruba
+192.168.150.223	RedirectFotoAlbum.db.aruba
+192.168.150.223	REDSTATS.db.aruba
+192.168.150.223	SandBox.db.aruba
+192.168.150.223	scambiobanner_banmanpro.db.aruba
+192.168.150.223	scambiobanner_linkxpro.db.aruba
+192.168.150.223	SetupServizi.db.aruba
+192.168.150.223	SiteMapSpider.db.aruba
+192.168.150.223	spostamentiwebs.db.aruba
+192.168.150.223	Statistiche_VisiteSiti.db.aruba
+192.168.150.223	Statistiche_VisiteSiti.db.aruba
+192.168.150.223	technorail_quadrature.db.aruba
+192.168.150.223	Uplinks.db.aruba
+192.168.150.223	Uplinksfaq.db.aruba
+192.168.150.223	virtuozzodb.db.aruba
+192.168.150.223	Whitedb.db.aruba
+
+#MYSQL
+192.168.150.129	assistenza.db.aruba.it
+192.168.150.129	cancellazione.db.aruba
+192.168.150.129	DNS.db.aruba
+192.168.150.129	dns.dbx.aruba
+192.168.150.129	ftp.dbx.aruba
+192.168.150.129	ftp_analysis.dbx.aruba
+192.168.150.129	pec_cmq.dbx.aruba
+192.168.150.129	servermysql.aruba.it
+192.168.150.129	supportcenter.db.aruba
+192.168.150.129	supportcenter_aruba.db.aruba
+95.110.150.129	spamassassin.db.aruba
+95.110.150.129	vpopmail.db.aruba
+95.110.150.175	arubapec.dbx.aruba
+95.110.150.175	RI_COMUNICAZIONE.dbx.aruba
+192.168.150.237 imchat1.aruba.it 
+
+#Contabilità
+62.149.188.15   BillingManager.db.aruba
+62.149.188.15	technorail.db.Oceano
+62.149.188.15   technorailOceano.db.aruba
+62.149.188.15   oceano.db.aruba
+
+#####################
+
+#hosting
+95.110.150.96   hosting.aruba.it
+95.110.150.96   dev.hosting.aruba.it
+95.110.150.102  intl.hosting.aruba.it
+95.110.150.102  managehosting.aruba.it
+95.110.150.102	admin.aruba.it
+95.110.150.102	dominios.aruba.it
+95.110.150.102	domains.aruba.it
+95.110.150.102	domainname.aruba.it
+95.110.150.102	redirect.aruba.it
+95.110.150.102	irs.aruba.it
+
+#AruPec
+95.110.150.117	www.pec.it
+95.110.150.117	areaclienti.pec.it
+95.110.150.117	www.pecgratuita.it
+
+
+#AruWebs
+95.110.150.96	www.aruba.it
+95.110.150.96	staging.aruba.it
+95.110.150.103	pagamenti.aruba.it
+95.110.150.103	fotoalbum.aruba.it
+95.110.150.103	trackbanner.aruba.it
+95.110.150.103	nuke.aruba.it
+95.110.150.103	pay.aruba.it
+95.110.150.103	adsl.aruba.it
+95.110.150.103	adv.aruba.it
+95.110.150.103	www.aruba.it
+95.110.150.103	sms.aruba.it
+95.110.150.103	rivenditori.aruba.it
+95.110.150.103	commerce.aruba.it
+95.110.150.103	free.aruba.it
+95.110.150.103	serverdedicati.aruba.it
+95.110.150.103	oldserverdedicati.aruba.it
+95.110.150.103	blog.aruba.it
+95.110.150.103	webfarm.aruba.it
+95.110.150.103	hdsl.aruba.it
+95.110.150.103	keyposition.aruba.it
+95.110.150.103	uplink.aruba.it
+95.110.150.103	rinnovicdrl.pec.it
+95.110.150.103	supersite.aruba.it
+95.110.150.103	gestioneaccessi.aruba.it
+95.110.150.103	print.aruba.it
+95.110.150.118	rinnovifirmadigitale.pec.it
+95.110.150.103	socialmedia.aruba.it
+95.110.150.103	WebSiteCBAPayPal.Aruba.it
+
+#webservice
+192.168.150.100	framework.ws.aruba.it
+192.168.150.100	webservicenew.aruba.it
+192.168.150.100	netwhois.tol.aruba.it
+192.168.150.100	odino.aruba.it
+192.168.150.100	wipwebservice.aruba.it
+192.168.150.100	irs.w5.aruba.it
+192.168.150.100	irs.w4.aruba.it
+192.168.150.100	irs.w3.aruba.it
+192.168.150.100	irs.w2.aruba.it
+192.168.150.100	irs.w1.aruba.it
+192.168.150.100	netwhois.aruba.it
+192.168.150.100	netwhois2.aruba.it
+192.168.150.100	netwhois3.aruba.it
+192.168.150.100	netwhois4.aruba.it
+192.168.150.100	netwhois5.aruba.it
+192.168.150.100	netwhois6.aruba.it
+192.168.150.100	netwhois7.aruba.it
+192.168.150.100	webservice.aruba.it
+192.168.150.100	webservice
+192.168.150.100	webservices
+192.168.150.100	services.ws.aruba.it
+192.168.150.100	webservice2.aruba.it
+192.168.150.100	webservice3.aruba.it
+192.168.150.100	private.ws.aruba.it
+192.168.150.100	public.ws.aruba.it
+192.168.150.100	dataservices.ws.aruba.it
+192.168.150.100	webservice.arubacloud.fr
+192.168.150.100	apimail.aruba.it
+192.168.150.100	CBAPayCallBack.aruba.it
+192.168.150.100	paymentservice.aruba.it
+
+#WHITELABEL
+95.110.150.82 whitelabel.ws.aruba.it
+95.110.150.82 whitelabel.private.ws.aruba.it
+
+
+#BASEKIT
+192.168.150.100  	services.account.aruba.it
+192.168.150.100  	services.basekit.aruba.it
+192.168.150.100  	services.cart.aruba.it
+192.168.150.100   	services.configuration.aruba.it
+192.168.150.100   	services.domain.aruba.it
+
+#MOCK
+95.110.151.234	wsnic.aruba.it
+
+#WEBSERVICEPEC
+192.168.150.115	adminpecupload.pec.aruba.it
+192.168.150.115	PecDomini.pec.aruba.it
+192.168.150.115	services.pec.aruba.it
+192.168.150.115	Upload.pec.aruba.it
+192.168.150.115	Uploads.pec.aruba.it
+192.168.150.115	registropec.pec.aruba.it
+
+#INTRANET
+95.110.150.101	intranet.aruba.it
+95.110.150.101	webfarm.intranet.aruba.it
+95.110.150.101	intranetdoc.aruba.it
+
+#EXTRANET
+95.110.150.116	extranet.aruba.it
+95.110.150.116	intranetnew.ad.aruba.it
+
+#contratti
+95.110.151.239 contratti.aruba.it
+95.110.151.202	attivazionimail.aruba.it
+95.110.151.239	smtpcom.aruba.it
+95.110.151.239	smtpcom.pec.aruba.it
+95.110.151.239	wsshare.aruba.it
+95.110.151.239	smtp.aruba.it
+
+#SMARTERTRACK
+95.110.151.102	ticket.aruba.it
+95.110.151.102	kb.aruba.it
+95.110.151.102	assistenza.aruba.it
+
+#MYSQLPANEL
+95.110.150.129    admin.mysql.aruba.it
+95.110.150.129    mysql.aruba.it
+
+#MSSQLPANEL
+95.110.150.153	mssql.aruba.it
+
+#WEBX
+95.110.150.198  webx394.aruba.it
+
+#PROVISIONING
+#95.110.150.144	KEYPROV
+#95.110.150.144	provisioning.ws.aruba.it
+#95.110.150.144	provisioning.db.aruba
+
+#WEBSERVICECONTABILITA
+95.110.150.230	webservicecontabilita.aruba.it
+95.110.150.230	ora.aruba.it
+95.110.150.230	ora.staff.aruba.it
+95.110.150.230	test-ora.staff.aruba.it
+95.110.150.230	test-ora.aruba.it
+
+#Sitebuilder
+95.110.150.64	admin.sitebuilder.aruba.it
+
+#Blog
+95.110.150.75	webservice.blog.aruba.it
+95.110.150.186	fotoalbum.aruba.it
+
+#CERBERO
+192.168.150.87  WcfCBABancaSellaCallback.Aruba.it
+192.168.150.87	wcfcbasec.aruba.it
+192.168.150.87	wcfcba.aruba.it
+192.168.150.87	wcfcerberoserver.aruba.it
+192.168.150.87	websitecerbero.aruba.it
+192.168.150.87	wcfcerberosecserver.aruba.it
+192.168.150.87	websitecba.aruba.it
+192.168.150.87  CerberoCheckTicket.aruba.it
+192.168.150.87  WcfCerberoAlert.aruba.it
+192.168.150.87	WebSiteAlertCerbero.aruba.it
+192.168.150.87	WcfCBAPayPalCallback.Aruba.it
+192.168.150.87  WcfCBA_PasswordChanged_Notification.Aruba.it
+
+#NuovaArchittettura
+95.110.150.145	api.aruba.it
+95.110.150.145	cart.aruba.it
+95.110.150.145	onecart.aruba.it
+95.110.150.145	onecartcdn.aruba.it
+95.110.150.145	adminarea.aruba.it
+95.110.150.145	customerarea.aruba.it
+95.110.150.145	privapi-notification.aruba.it
+

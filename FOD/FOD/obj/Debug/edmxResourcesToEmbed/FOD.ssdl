@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FodModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="FodModelStoreContainer">
+    <EntitySet Name="Airports" EntityType="FodModel.Store.Airports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AirportsCosts" EntityType="FodModel.Store.AirportsCosts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cities" EntityType="FodModel.Store.Cities" store:Type="Tables" store:Schema="dbo" store:Name="Cities">
+      <DefiningQuery>SELECT 
+      [Cities].[IdCity] AS [IdCity], 
+      [Cities].[Name] AS [Name], 
+      [Cities].[Visible] AS [Visible], 
+      [Cities].[Type] AS [Type]
+      FROM [dbo].[Cities] AS [Cities]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RicercheVoli" EntityType="FodModel.Store.RicercheVoli" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Settings" EntityType="FodModel.Store.Settings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Voli" EntityType="FodModel.Store.Voli" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Airports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Country" Type="nchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="AirportsCosts">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="Distance" Type="float" />
+    <Property Name="AutorouteCost" Type="float" />
+    <Property Name="ParkDayCost" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'rugia.dbo.Cities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="IdCity" />
+    </Key>
+    <Property Name="IdCity" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Visible" Type="bit" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="RicercheVoli">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Url" Type="nvarchar(max)" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Processato" Type="bit" />
+    <Property Name="DataRicerca" Type="datetime" />
+    <Property Name="FromCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="Vettore" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="Key" />
+    </Key>
+    <Property Name="Key" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Voli">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="From" Type="nvarchar" MaxLength="100" />
+    <Property Name="To" Type="nvarchar" MaxLength="100" />
+    <Property Name="Dal" Type="datetime" />
+    <Property Name="Al" Type="datetime" />
+    <Property Name="Price" Type="float" />
+    <Property Name="OldPrice" Type="float" />
+    <Property Name="IsPriceChanged" Type="bit" />
+    <Property Name="IsBestLocalOffer" Type="int" />
+    <Property Name="IsBestGlobalOffer" Type="int" />
+    <Property Name="DataRicerca" Type="datetime" />
+    <Property Name="FromCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="Weekend" Type="bit" />
+    <Property Name="Days" Type="numeric" Precision="10" />
+    <Property Name="Vettore" Type="nvarchar" MaxLength="50" />
+    <Property Name="Star" Type="bit" />
+  </EntityType>
+</Schema>
